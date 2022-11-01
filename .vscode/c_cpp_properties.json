@@ -1,0 +1,59 @@
+{
+    "configurations": [
+        {
+            "name": "ARM GCC",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}*",
+                "${GCC_PAATH}/Embedded-Tools/GNU-ARM-Toolchain-9-2020-q2/arm-none-eabi/include",
+                "${GCC_PAATH}/Embedded-Tools/GNU-ARM-Toolchain-9-2020-q2/lib/gcc/arm-none-eabi/9.3.1/include-fixed",
+                "${GCC_PAATH}/Embedded-Tools/GNU-ARM-Toolchain-9-2020-q2/lib/gcc/arm-none-eabi/9.3.1/include",
+                "${GCC_PAATH}/Embedded-Tools/GNU-ARM-Toolchain-9-2020-q2/arm-none-eabi/include/sys",
+                "${GCC_PAATH}/Embedded-Tools/GNU-ARM-Toolchain-9-2020-q2/arm-none-eabi/include/newlib-nano",
+                "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Core/Inc",
+                "${workspaceFolder}/Libraries/**",
+                "${workspaceFolder}/simple_os",
+                "${workspaceFolder}/config"
+            ],
+            "defines": [
+                "DEBUG",
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "STM32F103xB",
+                "USE_FULL_LL_DRIVER",
+                "USE_FULL_ASSERT=1U",
+                "HSE_VALUE=8000000",
+                "HSE_STARTUP_TIMEOUT=100",
+                "LSE_STARTUP_TIMEOUT=5000",
+                "LSE_VALUE=32768",
+                "HSI_VALUE=8000000",
+                "LSI_VALUE=40000",
+                "VDD_VALUE=3300",
+                "PREFETCH_ENABLE=1",
+            ],
+            "compilerPath": "${GCC_PATH}",
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-arm64",
+            "configurationProvider": "ms-vscode.makefile-tools",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "${workspaceFolder}*",
+                    "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                    "${workspaceFolder}/Drivers/CMSIS/Include",
+                    "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc",
+                    "${workspaceFolder}/Core/Inc",
+                    "${workspaceFolder}/Libraries/**",
+                    "${workspaceFolder}/simple_os",
+                    "${workspaceFolder}/config"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}

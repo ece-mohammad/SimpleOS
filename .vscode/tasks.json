@@ -1,0 +1,86 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Make: debug",
+			"command": "make",
+			"args": [
+				"build=Debug"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Build debug, compiler: F:/Programs/Embedded-Tools/GNU-ARM-Toolchain-9-2020-q2/bin/arm-none-eabi-gcc.exe"
+		},
+		{
+			"type": "shell",
+			"label": "Make: Release",
+			"command": "make",
+			"args": [
+				"build=Releasael"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Build release, compiler: F:/Programs/Embedded-Tools/GNU-ARM-Toolchain-9-2020-q2/bin/arm-none-eabi-gcc.exe"
+		},
+		{
+			"type": "shell",
+			"label": "Make: RelMinSizee",
+			"command": "make",
+			"args": [
+				"build=RelMinSize"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Build release-min-size, compiler: F:/Programs/Embedded-Tools/GNU-ARM-Toolchain-9-2020-q2/bin/arm-none-eabi-gcc.exe"
+		},
+		{
+			"type": "shell",
+			"label": "Make: Docs",
+			"command": "make",
+			"args": [
+				"docs"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Make documentations"
+		},
+		{
+			"type": "shell",
+			"label": "Make clean",
+			"command": "make",
+			"args": [
+				"clean"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Clean build files"
+		},
+		{
+			"type": "shell",
+			"label": "Make clean all",
+			"command": "make",
+			"args": [
+				"clean_all"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "CClean all build files"
+		}
+	]
+}
