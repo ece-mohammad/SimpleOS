@@ -297,6 +297,29 @@ void SysTick_Handler(void)
 
 ```
 
-### Notes
+### Build
 
-- Simple OS is 
+Simple OS can be built with make, using different build configurations: debug, release, release with minimum size.
+
+> Make sure toolchain's GCC is in path or add `GCC_PATH=path/to/gcc` when invoking make: `make all GCC_PATH=../.`
+
+```shell
+make build=Debug 
+make build=Release
+make build=RelMinsize 
+```
+
+To build simple OS doxygen documentations, this will generate HTML files under `Docs/doxygen`
+
+```shell
+make docs
+```
+
+Clean build directories
+
+```shell
+make clean
+make clean_all
+```
+
+
