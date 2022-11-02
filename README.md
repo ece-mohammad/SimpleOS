@@ -301,7 +301,7 @@ void SysTick_Handler(void)
 
 Simple OS can be built with make, using different build configurations: debug, release, release with minimum size.
 
-> Make sure toolchain's GCC is in path or add `GCC_PATH=path/to/gcc` when invoking make: `make all GCC_PATH=../.`
+> Make sure toolchain's GCC is in path or add `GCC_PATH=path/to/gcc/dir` when invoking make: `make all GCC_PATH=path/to/gcc/dir`
 
 ```shell
 make build=Debug 

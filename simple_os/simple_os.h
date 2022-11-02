@@ -96,7 +96,7 @@ void OS_vidInitialize(void);
  *                            If multiple tasks are ready to be executed at the same tick,
  *                            the task with the highest priority is executed first.
  * @param [in]  u32Period   : task's period in OS ticks, number of ticks between each call to the task's function.
- *                            \f(u32Period > 0 \f)> for periodic tasks. For one-shot tasks, \f( u32Period == 0 \f).
+ *                            `u32Period > 0` for periodic tasks. For one-shot tasks, `u32Period == 0`.
  * @param [in]  u32Delay    : task's first call delay, how many ticks to wait before calling the task's function for the first time.
  * @param [out] pTaskHandle : pointer to a task handle variable, used to save the task's handle.
  *                            Task handle is used with functions like OS_enDeleteTask(), OS_enSuspendTask(), OS_enResumeTask()

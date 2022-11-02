@@ -13,7 +13,7 @@
 ######################################
 # target
 ######################################
-TARGET = SimpleOs
+TARGET = SimpleOS
 
 
 ######################################
@@ -24,11 +24,13 @@ ifeq ($(strip $(build)),)
 build = Debug
 endif
 
-# optimization
+# optimization flags
 ifeq ($(build), Release)
 OPT = -O2
+
 else ifeq ($(build), RelMinSize)
 OPT = -Os
+
 else
 OPT = -Og
 endif
@@ -54,6 +56,11 @@ endif
 ######################################
 # source
 ######################################
+
+# Note: module sources
+MODULE_SOURCES = \
+simple_os/simple_os.c
+
 # C sources
 C_SOURCES =  \
 Core/Src/main.c \
@@ -68,9 +75,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.c \
 Core/Src/system_stm32f1xx.c
 
-# Note: user sources
-C_SOURCES += \
-simple_os/simple_os.c
+C_SOURCES += $(MODULE_SOURCES)
 
 # ASM sources
 ASM_SOURCES =  \
@@ -88,11 +93,13 @@ CC = $(GCC_PATH)/$(PREFIX)gcc
 AS = $(GCC_PATH)/$(PREFIX)gcc -x assembler-with-cpp
 CP = $(GCC_PATH)/$(PREFIX)objcopy
 SZ = $(GCC_PATH)/$(PREFIX)size
+AR = $(GCC_PATH)/$(PREFIX)ar
 else
 CC = $(PREFIX)gcc
 AS = $(PREFIX)gcc -x assembler-with-cpp
 CP = $(PREFIX)objcopy
 SZ = $(PREFIX)size
+AR = $(PREFIX)ar
 endif
 HEX = $(CP) -O ihex
 BIN = $(CP) -O binary -S
@@ -176,7 +183,9 @@ LIBDIR =
 LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 
 # default action: build all
-all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
+all: $(TARGET) 
+
+$(TARGET): $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin 
 
 
 #######################################
@@ -207,6 +216,11 @@ $(BUILD_DIR)/%.bin: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
 	
 $(BUILD_DIR):
 	mkdir -p $@	
+
+
+#######################################
+# Note: user defined targets
+#######################################
 
 docs:
 	doxygen Docs/Doxyfile

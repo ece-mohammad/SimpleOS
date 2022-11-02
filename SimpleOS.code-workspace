@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"simple_os.h": "c",
+			"main.h": "c",
+			"stdint.h": "c",
+			"stdint-gcc.h": "c",
+			"stm32f1xx.h": "c"
+		}
+	}
+}
