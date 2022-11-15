@@ -11,6 +11,13 @@
 			"stdint.h": "c",
 			"stdint-gcc.h": "c",
 			"stm32f1xx.h": "c"
-		}
+		},
+		"makefile.launchConfigurations": [
+			{
+				"cwd": "f:\\Projects\\EmbeddedProjects\\VSCode\\SimpleOS\\build\\Debug",
+				"binaryPath": "f:\\Projects\\EmbeddedProjects\\VSCode\\SimpleOS\\build\\Debug\\SimpleOS.elf",
+				"binaryArgs": []
+			}
+		]
 	}
 }

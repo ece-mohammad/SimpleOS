@@ -9,6 +9,14 @@
 #	2017-02-10 - Several enhancements + project update mode
 #   2015-07-22 - first version
 # ------------------------------------------------
+# 
+# options:
+# 	build:
+# 		Debug
+# 		Release
+# 		RelMinSize
+# 
+# ------------------------------------------------
 
 ######################################
 # target
@@ -161,7 +169,7 @@ C_INCLUDES += \
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -Wextra -fdata-sections -ffunction-sections
 
-CFLAGS += $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections
+CFLAGS += $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections --std=c99
 
 ifeq ($(build), Debug)
 CFLAGS += -g -gdwarf-2
